@@ -17,6 +17,10 @@ module.exports = function (grunt) {
 
     options.script = this.data.script;
 
+    if (options.env && typeof options.env === 'function') {
+      options.env = options.env();
+    }
+
     var callback;
 
     if (options.callback) {
